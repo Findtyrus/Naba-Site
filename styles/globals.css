@@ -16,6 +16,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+html, body { max-width: 100%; overflow-x: clip; }
 a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
 
@@ -58,6 +59,8 @@ nav a:not(.navCta):hover { color: var(--maroon); }
 .principles ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
 .principles li { padding: 18px 0; display: grid; grid-template-columns: 54px 1fr; border-bottom: 1px solid var(--line); font-size: 23px; font-weight: 700; }
 .principles li span { color: var(--muted); font-size: 10px; letter-spacing: .12em; }
+.principles li strong { display: block; }
+.principles li p { max-width: 520px; margin: 7px 0 0; color: var(--muted); font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 400; line-height: 1.45; }
 
 .calendar { background: var(--maroon-dark); color: white; }
 .calendarHeader, .leadershipHeader { margin: 68px 0 75px; display: grid; grid-template-columns: 1.3fr .7fr; gap: 10vw; align-items: end; }
@@ -167,7 +170,7 @@ footer > p { grid-column: 1 / -1; margin: 30px 0 0; padding-top: 20px; border-to
   .hero { min-height: auto; padding-top: 24px; }
   .heroKicker span:last-child { display: none; }
   .heroGrid { padding-top: 55px; gap: 20px; }
-  .hero h1 { font-size: 48px; }
+  .hero h1 { font-size: clamp(39px, 13.5vw, 48px); overflow-wrap: anywhere; }
   .heroLead { font-size: 18px; }
   .heroActions, .joinActions { align-items: stretch; flex-direction: column; }
   .buttonText { align-self: flex-start; }
@@ -194,4 +197,23 @@ footer > p { grid-column: 1 / -1; margin: 30px 0 0; padding-top: 20px; border-to
   footer { grid-template-columns: 1fr; gap: 34px; }
   .footerLinks { justify-content: flex-start; flex-wrap: wrap; }
   footer > p { grid-column: 1; }
+}
+
+@media (max-width: 390px) {
+  .siteHeader { padding-inline: 4vw; }
+  .wordmark { gap: 9px; }
+  .wordmarkSub { display: none; }
+  .wordmarkRule { display: none; }
+  .navCta { padding-inline: 10px; }
+  .heroActions .button, .joinActions .button { width: 100%; padding-inline: 14px; text-align: center; }
+  .heroFoot { grid-template-columns: repeat(2, 1fr); row-gap: 14px; }
+  .sectionLabel { grid-template-columns: 42px 1fr; }
+  .eventRow { grid-template-columns: 70px 1fr; gap: 14px; }
+  .eventNumber { display: none; }
+  .eventMeta { grid-column: 2; }
+  .lifePhoto figcaption { flex-direction: column; gap: 6px; }
+  .lifePhoto figcaption strong { text-align: left; }
+  .tierCard { min-height: 0; padding-inline: 22px; }
+  .tierCard > a { margin-top: 42px; }
+  .instagramLink { width: 100%; justify-content: space-between; }
 }
