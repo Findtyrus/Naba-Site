@@ -26,7 +26,13 @@ const events = [
 ];
 
 const values = ['All In', 'Intention', 'Morals', 'Service'];
-const fiveEs = ['Engage', 'Empower', 'Educate', 'Enhance', 'Elevate'];
+const fiveEs = [
+  { name: 'Engage', description: 'Build meaningful relationships with students, professionals, and the community.' },
+  { name: 'Empower', description: 'Give members the confidence, access, and support to pursue bigger opportunities.' },
+  { name: 'Educate', description: 'Develop practical knowledge through career preparation and professional programming.' },
+  { name: 'Enhance', description: 'Strengthen the skills, experiences, and networks members bring to their careers.' },
+  { name: 'Elevate', description: 'Celebrate achievement and help each member reach the next level.' },
+];
 const chapterLife = [
   { image: '/chapter-life/member-8078.webp', title: 'A room full of ambition', detail: 'Chapter kickoff' },
   { image: '/chapter-life/member-8083.webp', title: 'The finish line', detail: 'Graduate recognition' },
@@ -87,6 +93,7 @@ export default function Home() {
     <>
       <Head>
         <title>NABA Mississippi State Chapter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="description" content="The National Association of Black Accountants student chapter at Mississippi State University." />
       </Head>
 
@@ -147,7 +154,7 @@ export default function Home() {
           <div className="principles">
             <div>
               <p className="eyebrow">The 5 Es</p>
-              <ol>{fiveEs.map((item, index) => <li key={item}><span>0{index + 1}</span>{item}</li>)}</ol>
+              <ol>{fiveEs.map((item, index) => <li key={item.name}><span>0{index + 1}</span><div><strong>{item.name}</strong><p>{item.description}</p></div></li>)}</ol>
             </div>
             <div>
               <p className="eyebrow">Our values</p>
@@ -239,7 +246,7 @@ export default function Home() {
         <section className="joinSection" id="join">
           <p className="eyebrow">There is a place for you here.</p>
           <h2>Build your network before you need it.</h2>
-          <p>Join NABA at Mississippi State to meet peers, connect with professionals, prepare for recruiting, and serve alongside students committed to lifting as we climb. Students from every major and background are welcome.</p>
+          <p>Join NABA at Mississippi State to meet peers, connect with professionals, prepare for recruiting, and serve alongside students committed to lifting as we climb. Business majors from every background are welcome.</p>
           <div className="joinActions">
             <a className="button buttonLight" href={interestForm} target="_blank" rel="noreferrer">Complete interest form</a>
             <a className="button buttonOutline" href={nationalMembership} target="_blank" rel="noreferrer">Join National NABA free</a>
